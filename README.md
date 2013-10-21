@@ -1,12 +1,20 @@
 geolite-ip2country
 ==================
 
-Shell scripts to convert an IP address to a Country
+Shell scripts to convert an IPv4 IP address to a Country
 using GeoLite data created by MaxMind.
 
 ## LANGUAGE ##
 
 Shell (dash)
+
+## TARGET PLATFORM ##
+
+Ubuntu 12.04 LTS
+
+## DEPENDENCIES ##
+
+* the command `geoiplookup` from the package geoip-bin
 
 ## AUTHOR ##
 
