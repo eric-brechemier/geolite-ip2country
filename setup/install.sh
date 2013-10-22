@@ -16,7 +16,7 @@ geoliteArchivePath="data/$geoliteArchiveName"
 geoliteDataPath="data/$geoliteFileName"
 
 echo 'Install project dependencies (using sudo)'
-sudo apt-get install geoip-bin
+sudo apt-get --yes install geoip-bin
 
 echo 'Switch to root folder of the project'
 cd "$(dirname $0)"
