@@ -7,14 +7,6 @@
 # The GeoLite data should be updated about once a month for typical usage,
 # using a separate script: setup/update-data.sh
 
-# Config
-baseDownloadUrl='http://geolite.maxmind.com/download/geoip/database'
-geoliteFileName='GeoIP.dat'
-geoliteArchiveName="$geoliteFileName.gz"
-geoliteDownloadUrl="$baseDownloadUrl/GeoLiteCountry/$geoliteArchiveName"
-geoliteArchivePath="data/$geoliteArchiveName"
-geoliteDataPath="data/$geoliteFileName"
-
 echo 'Install project dependencies (using sudo)'
 sudo apt-get --yes install geoip-bin
 
@@ -23,16 +15,14 @@ cd "$(dirname $0)"
 cd ..
 echo "$(pwd)"
 
-if [ -f "$geoliteDataPath" ]
+if [ -d data ]
 then
-  echo 'GeoLite data is present already.'
-  echo 'Use setup/update-data.sh instead if you wish to update it.'
+  echo 'Folder data/ exists already:'
+  ls -l data
+  echo 'Use setup/update-data.sh if you wish to update downloaded data.'
 else
   echo 'Create data folder'
   mkdir data
   echo 'Download initial data'
-  wget "$geoliteDownloadUrl" --output-document="$geoliteArchivePath"
-  echo 'Extract data from downloaded archive'
-  gunzip --verbose "$geoliteArchivePath"
+  ./setup/update-data.sh
 fi
-ls -l "$geoliteDataPath"
