@@ -16,6 +16,14 @@ Ubuntu 12.04 LTS
 
 * the command `geoiplookup` from the package geoip-bin
 
+## USAGE ##
+
+  * `setup/install.sh` - install dependencies and download GeoLite data
+  * `ip2country-code.sh 8.8.8.8` - convert an IPv4 to a country code
+  * `ip2country-name.sh 8.8.8.8` - convert an IPv4 to a country name
+  * `setup/update-data.sh` - update GeoLite data (once a month)
+  * `setup/uninstall.sh` - uninstall dependencies
+
 ## AUTHOR ##
 
 Eric Bréchemier <github@eric.brechemier.name>
